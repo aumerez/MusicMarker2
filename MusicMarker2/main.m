@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import <stdlib.h>
+#import <DropboxSDK/DropboxSDK.h>
+#import <AVFoundation/AVFoundation.h>
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {

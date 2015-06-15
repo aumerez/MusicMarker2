@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC60BFEF1B20E2EF00909105 /* RadiolobeLogo1.png in Resources */ = {isa = PBXBuildFile; fileRef = BC60BFEC1B20E2EF00909105 /* RadiolobeLogo1.png */; };
+		BC60BFF01B20E2EF00909105 /* lema.png in Resources */ = {isa = PBXBuildFile; fileRef = BC60BFED1B20E2EF00909105 /* lema.png */; };
+		BC60BFF11B20E2EF00909105 /* lema2.png in Resources */ = {isa = PBXBuildFile; fileRef = BC60BFEE1B20E2EF00909105 /* lema2.png */; };
+		BCA150281B14971C00CD562F /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA150271B14971C00CD562F /* PlayerViewController.m */; };
+		BCA1502A1B149EE000CD562F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA150291B149EE000CD562F /* AVFoundation.framework */; };
+		BCA1502D1B15E23D00CD562F /* PlayerBuildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA1502C1B15E23D00CD562F /* PlayerBuildViewController.m */; };
+		BCA1502F1B16581900CD562F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA1502E1B16581900CD562F /* Foundation.framework */; };
+		BCA150311B1665EB00CD562F /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA150301B1665EB00CD562F /* CoreFoundation.framework */; };
+		BCA1507C1B17640900CD562F /* PlayBtnMid.png in Resources */ = {isa = PBXBuildFile; fileRef = BCA1507B1B17640900CD562F /* PlayBtnMid.png */; };
+		BCA1507F1B1764CD00CD562F /* StopBtnMid.png in Resources */ = {isa = PBXBuildFile; fileRef = BCA1507D1B1764CD00CD562F /* StopBtnMid.png */; };
+		BCA150801B1764CD00CD562F /* PauseBtnMid.png in Resources */ = {isa = PBXBuildFile; fileRef = BCA1507E1B1764CD00CD562F /* PauseBtnMid.png */; };
 		BCFB6E791B0EC5C50031538A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFB6E781B0EC5C50031538A /* main.m */; };
 		BCFB6E7C1B0EC5C50031538A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFB6E7B1B0EC5C50031538A /* AppDelegate.m */; };
 		BCFB6E7F1B0EC5C50031538A /* MusicMarker2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCFB6E7D1B0EC5C50031538A /* MusicMarker2.xcdatamodeld */; };
@@ -15,6 +26,10 @@
 		BCFB6E871B0EC5C50031538A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCFB6E861B0EC5C50031538A /* Images.xcassets */; };
 		BCFB6E8A1B0EC5C50031538A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCFB6E881B0EC5C50031538A /* LaunchScreen.xib */; };
 		BCFB6E961B0EC5C50031538A /* MusicMarker2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFB6E951B0EC5C50031538A /* MusicMarker2Tests.m */; };
+		BCFB6EA11B0ED8A10031538A /* MusicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFB6EA01B0ED8A10031538A /* MusicTableViewController.m */; };
+		BCFB6EA31B0EDCB50031538A /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFB6EA21B0EDCB50031538A /* DropboxSDK.framework */; };
+		BCFB6EA51B0EDCD80031538A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFB6EA41B0EDCD80031538A /* Security.framework */; };
+		BCFB6EA71B0EDD5F0031538A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFB6EA61B0EDD5F0031538A /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +43,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC60BFEC1B20E2EF00909105 /* RadiolobeLogo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RadiolobeLogo1.png; sourceTree = "<group>"; };
+		BC60BFED1B20E2EF00909105 /* lema.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lema.png; sourceTree = "<group>"; };
+		BC60BFEE1B20E2EF00909105 /* lema2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lema2.png; sourceTree = "<group>"; };
+		BCA150261B14971C00CD562F /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
+		BCA150271B14971C00CD562F /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
+		BCA150291B149EE000CD562F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BCA1502B1B15E23D00CD562F /* PlayerBuildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerBuildViewController.h; sourceTree = "<group>"; };
+		BCA1502C1B15E23D00CD562F /* PlayerBuildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerBuildViewController.m; sourceTree = "<group>"; };
+		BCA1502E1B16581900CD562F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BCA150301B1665EB00CD562F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		BCA1507B1B17640900CD562F /* PlayBtnMid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlayBtnMid.png; sourceTree = "<group>"; };
+		BCA1507D1B1764CD00CD562F /* StopBtnMid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StopBtnMid.png; sourceTree = "<group>"; };
+		BCA1507E1B1764CD00CD562F /* PauseBtnMid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PauseBtnMid.png; sourceTree = "<group>"; };
 		BCFB6E731B0EC5C50031538A /* MusicMarker2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicMarker2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCFB6E771B0EC5C50031538A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCFB6E781B0EC5C50031538A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -42,6 +70,11 @@
 		BCFB6E8F1B0EC5C50031538A /* MusicMarker2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicMarker2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCFB6E941B0EC5C50031538A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCFB6E951B0EC5C50031538A /* MusicMarker2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicMarker2Tests.m; sourceTree = "<group>"; };
+		BCFB6E9F1B0ED8A10031538A /* MusicTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicTableViewController.h; sourceTree = "<group>"; };
+		BCFB6EA01B0ED8A10031538A /* MusicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicTableViewController.m; sourceTree = "<group>"; };
+		BCFB6EA21B0EDCB50031538A /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
+		BCFB6EA41B0EDCD80031538A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		BCFB6EA61B0EDD5F0031538A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +82,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCA150311B1665EB00CD562F /* CoreFoundation.framework in Frameworks */,
+				BCA1502F1B16581900CD562F /* Foundation.framework in Frameworks */,
+				BCA1502A1B149EE000CD562F /* AVFoundation.framework in Frameworks */,
+				BCFB6EA71B0EDD5F0031538A /* QuartzCore.framework in Frameworks */,
+				BCFB6EA51B0EDCD80031538A /* Security.framework in Frameworks */,
+				BCFB6EA31B0EDCB50031538A /* DropboxSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,9 +104,15 @@
 		BCFB6E6A1B0EC5C50031538A = {
 			isa = PBXGroup;
 			children = (
+				BCA150301B1665EB00CD562F /* CoreFoundation.framework */,
 				BCFB6E751B0EC5C50031538A /* MusicMarker2 */,
 				BCFB6E921B0EC5C50031538A /* MusicMarker2Tests */,
 				BCFB6E741B0EC5C50031538A /* Products */,
+				BCA1502E1B16581900CD562F /* Foundation.framework */,
+				BCA150291B149EE000CD562F /* AVFoundation.framework */,
+				BCFB6EA41B0EDCD80031538A /* Security.framework */,
+				BCFB6EA61B0EDD5F0031538A /* QuartzCore.framework */,
+				BCFB6EA21B0EDCB50031538A /* DropboxSDK.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +132,12 @@
 				BCFB6E7B1B0EC5C50031538A /* AppDelegate.m */,
 				BCFB6E801B0EC5C50031538A /* ViewController.h */,
 				BCFB6E811B0EC5C50031538A /* ViewController.m */,
+				BCA150261B14971C00CD562F /* PlayerViewController.h */,
+				BCA150271B14971C00CD562F /* PlayerViewController.m */,
+				BCA1502B1B15E23D00CD562F /* PlayerBuildViewController.h */,
+				BCA1502C1B15E23D00CD562F /* PlayerBuildViewController.m */,
+				BCFB6E9F1B0ED8A10031538A /* MusicTableViewController.h */,
+				BCFB6EA01B0ED8A10031538A /* MusicTableViewController.m */,
 				BCFB6E831B0EC5C50031538A /* Main.storyboard */,
 				BCFB6E861B0EC5C50031538A /* Images.xcassets */,
 				BCFB6E881B0EC5C50031538A /* LaunchScreen.xib */,
@@ -99,6 +150,12 @@
 		BCFB6E761B0EC5C50031538A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BCA1507B1B17640900CD562F /* PlayBtnMid.png */,
+				BCA1507D1B1764CD00CD562F /* StopBtnMid.png */,
+				BCA1507E1B1764CD00CD562F /* PauseBtnMid.png */,
+				BC60BFEC1B20E2EF00909105 /* RadiolobeLogo1.png */,
+				BC60BFED1B20E2EF00909105 /* lema.png */,
+				BC60BFEE1B20E2EF00909105 /* lema2.png */,
 				BCFB6E771B0EC5C50031538A /* Info.plist */,
 				BCFB6E781B0EC5C50031538A /* main.m */,
 			);
@@ -203,8 +260,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCFB6E851B0EC5C50031538A /* Main.storyboard in Resources */,
+				BC60BFEF1B20E2EF00909105 /* RadiolobeLogo1.png in Resources */,
+				BC60BFF11B20E2EF00909105 /* lema2.png in Resources */,
+				BC60BFF01B20E2EF00909105 /* lema.png in Resources */,
 				BCFB6E8A1B0EC5C50031538A /* LaunchScreen.xib in Resources */,
+				BCA150801B1764CD00CD562F /* PauseBtnMid.png in Resources */,
 				BCFB6E871B0EC5C50031538A /* Images.xcassets in Resources */,
+				BCA1507C1B17640900CD562F /* PlayBtnMid.png in Resources */,
+				BCA1507F1B1764CD00CD562F /* StopBtnMid.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +285,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCA150281B14971C00CD562F /* PlayerViewController.m in Sources */,
+				BCA1502D1B15E23D00CD562F /* PlayerBuildViewController.m in Sources */,
+				BCFB6EA11B0ED8A10031538A /* MusicTableViewController.m in Sources */,
 				BCFB6E7F1B0EC5C50031538A /* MusicMarker2.xcdatamodeld in Sources */,
 				BCFB6E7C1B0EC5C50031538A /* AppDelegate.m in Sources */,
 				BCFB6E821B0EC5C50031538A /* ViewController.m in Sources */,
@@ -351,6 +417,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MusicMarker2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -361,6 +431,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MusicMarker2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -420,6 +494,7 @@
 				BCFB6E9B1B0EC5C50031538A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BCFB6E9C1B0EC5C50031538A /* Build configuration list for PBXNativeTarget "MusicMarker2Tests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +503,7 @@
 				BCFB6E9E1B0EC5C50031538A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

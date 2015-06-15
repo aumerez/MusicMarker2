@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MusicTableViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController{
 
-
+MusicTableViewController *mtvc;
+}
 @end
 
