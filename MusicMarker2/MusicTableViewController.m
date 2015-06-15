@@ -153,7 +153,7 @@ loadMetadataFailedWithError:(NSError *)error {
         if (![filePathsArray containsObject:filename]) {
             NSString *localDir = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
             NSString *localPath = [localDir stringByAppendingPathComponent:filename];
-            NSString *fullFilename = [NSString stringWithFormat:@"/Music/%@",filename];
+            NSString *fullFilename = [NSString stringWithFormat:@"Music/%@",filename];
             NSLog(@"file:%@", fullFilename);
             [self.restClient loadFile:fullFilename intoPath:localPath];
         } else {
@@ -176,7 +176,7 @@ loadMetadataFailedWithError:(NSError *)error {
 - (void)restClient:(DBRestClient *)client loadFileFailedWithError:(NSError *)error {
     NSLog(@"There was an error loading the file: %@", error);
 }
-- (IBAction)sendSelections:(id)sender {
+/*- (IBAction)sendSelections:(id)sender {
     [selections ]
 }
 
