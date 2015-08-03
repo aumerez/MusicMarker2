@@ -15,11 +15,16 @@
     
     NSMutableArray * Songs;
     NSMutableArray * downloadedSongs;
+    NSMutableArray * selectionDictionary;
     
     PlayerBuildViewController *pbvc;
+    
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *tableV;
 @property (strong, nonatomic)NSMutableArray *musicListDropbox;
+@property (strong, nonatomic) NSString *style;
+@property (strong, nonatomic) NSString *sendStyle;
+@property (strong, nonatomic) NSString *nombreUser;
 
 @end

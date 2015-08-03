@@ -16,7 +16,7 @@
 @end
 
 @implementation PlayerBuildViewController
-@synthesize playPauseButton, musicToPlay;
+@synthesize playPauseButton, musicToPlay, hitMarker, negativeMarker,positiveMarker;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -58,13 +58,13 @@
         [self.audioPlayer play];
         
         [self.playPauseButton setTitle:@"" forState:UIControlStateNormal];
-        UIImage * buttonImage=[UIImage imageNamed:@"PauseBtnMid.png"];
+        UIImage * buttonImage=[UIImage imageNamed:@"Pausebut2.png"];
         [playPauseButton setImage:buttonImage forState:UIControlStateNormal];
         
     } else if (self.audioPlayer.playing){
         [self.audioPlayer pause];
         [self.playPauseButton setTitle:@"" forState:UIControlStateNormal];
-        UIImage * buttonImage=[UIImage imageNamed:@"PlayBtnMid.png"];
+        UIImage * buttonImage=[UIImage imageNamed:@"playbut2.png"];
         [playPauseButton setImage:buttonImage forState:UIControlStateNormal];
         
     }
@@ -104,6 +104,15 @@
         [self.audioPlayer prepareToPlay];
         
         self.progressSlider.maximumValue = self.audioPlayer.duration;
+        
+        UIImage * buttonImage=[UIImage imageNamed:@"goodbtn.png"];
+        [positiveMarker setImage:buttonImage forState:UIControlStateNormal];
+        
+        UIImage * buttonImage2=[UIImage imageNamed:@"badbtn.png"];
+        [negativeMarker setImage:buttonImage2 forState:UIControlStateNormal];
+        
+        UIImage * buttonImage3=[UIImage imageNamed:@"hit2.png"];
+        [hitMarker setImage:buttonImage3 forState:UIControlStateNormal];
         
         [self.audioPlayer play];
     }
@@ -149,7 +158,7 @@
          [self.currentTimeLabel sizeToFit];
          
          [self.playPauseButton setTitle:@"" forState:UIControlStateNormal];
-        UIImage * buttonImage=[UIImage imageNamed:@"PlayBtnMid.png"];
+        UIImage * buttonImage=[UIImage imageNamed:@"playbut2.png"];
         [playPauseButton setImage:buttonImage forState:UIControlStateNormal];
     
 }
@@ -194,15 +203,61 @@
 }
 - (IBAction)positiveMarker:(id)sender {
     
-    [selecctions addObject:musicToPlay];
+    //[selecctions addObject:musicToPlay];
+
+    
+    NSDictionary *dictionary = [[NSDictionary alloc] initWithObjects:@[musicToPlay,@"positive"] forKeys:@[@"selectedSong",@"rating"]];
+    
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:@"ratingNotification"
+     object:self userInfo:dictionary];
+    
+    UIImage * buttonImage=[UIImage imageNamed:@"goodbtn2mark.png"];
+    [positiveMarker setImage:buttonImage forState:UIControlStateNormal];
+    
+    UIImage * buttonImage2=[UIImage imageNamed:@"badbtn.png"];
+    [negativeMarker setImage:buttonImage2 forState:UIControlStateNormal];
+    
+    UIImage * buttonImage3=[UIImage imageNamed:@"hit2.png"];
+    [hitMarker setImage:buttonImage3 forState:UIControlStateNormal];
     
 }
+
 - (IBAction)negativeMarker:(id)sender {
-    [selecctions addObject:musicToPlay];
+    
+    NSDictionary *dictionary = [[NSDictionary alloc] initWithObjects:@[musicToPlay,@"negative"] forKeys:@[@"selectedSong",@"rating"]];
+    
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:@"ratingNotification"
+     object:self userInfo:dictionary];
+    
+    UIImage * buttonImage=[UIImage imageNamed:@"goodbtn.png"];
+    [positiveMarker setImage:buttonImage forState:UIControlStateNormal];
+    
+    UIImage * buttonImage2=[UIImage imageNamed:@"badbtn2mark.png"];
+    [negativeMarker setImage:buttonImage2 forState:UIControlStateNormal];
+    
+    UIImage * buttonImage3=[UIImage imageNamed:@"hit2.png"];
+    [hitMarker setImage:buttonImage3 forState:UIControlStateNormal];
     
 }
+
 - (IBAction)hitMarker:(id)sender {
-    [selecctions addObject:musicToPlay];
+    
+    NSDictionary *dictionary = [[NSDictionary alloc] initWithObjects:@[musicToPlay,@"hit"] forKeys:@[@"selectedSong",@"rating"]];
+    
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:@"ratingNotification"
+     object:self userInfo:dictionary];
+    
+    UIImage * buttonImage=[UIImage imageNamed:@"goodbtn.png"];
+    [positiveMarker setImage:buttonImage forState:UIControlStateNormal];
+    
+    UIImage * buttonImage2=[UIImage imageNamed:@"badbtn.png"];
+    [negativeMarker setImage:buttonImage2 forState:UIControlStateNormal];
+    
+    UIImage * buttonImage3=[UIImage imageNamed:@"hit2mark.png"];
+    [hitMarker setImage:buttonImage3 forState:UIControlStateNormal];
     
 }
 

@@ -21,12 +21,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     DBSession *dbSession = [[DBSession alloc]
-                            initWithAppKey:@"df8do52r9ulwq91"
-                            appSecret:@"7btyy0xx7up44cj"
-                            root:kDBRootAppFolder]; // either kDBRootAppFolder or kDBRootDropbox
+                            initWithAppKey:@"hewbp2xrresj0v5"
+                            appSecret:@"zmqeyek9d0esq8q"
+                            root:kDBRootDropbox]; // either kDBRootAppFolder or kDBRootDropbox
     [DBSession setSharedSession:dbSession];
     // Override point for customization after application launch.
     return YES;
+}
+
+-(void) cargarBaseDeDatos{
+
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url

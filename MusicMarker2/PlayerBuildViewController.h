@@ -25,6 +25,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *playPauseButton;
 @property (weak, nonatomic) IBOutlet UISlider *progressSlider;
 @property (weak, nonatomic) IBOutlet UILabel *currentTimeLabel;
+@property (weak, nonatomic) IBOutlet UIButton *positiveMarker;
+@property (weak, nonatomic) IBOutlet UIButton *negativeMarker;
+@property (weak, nonatomic) IBOutlet UIButton *hitMarker;
 
 @property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 @property (strong, nonatomic) NSTimer *sliderTimer;

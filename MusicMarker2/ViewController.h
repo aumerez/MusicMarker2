@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "MusicTableViewController.h"
 
-@interface ViewController : UIViewController{
-
+@interface ViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate> {
 MusicTableViewController *mtvc;
 }
+
+@property (weak, nonatomic) IBOutlet UIPickerView *gender;
+
+
 @end
 
