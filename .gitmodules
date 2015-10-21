@@ -1,0 +1,3 @@
+[submodule "AndroidTest"]
+	path = AndroidTest
+	url = https://github.com/aumerez/MusicMarker2
