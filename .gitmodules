@@ -1,3 +1,6 @@
 [submodule "AndroidTest"]
 	path = AndroidTest
 	url = https://github.com/aumerez/MusicMarker2
+[submodule "AndroidTest2"]
+	path = AndroidTest2
+	url = git@github.com:bpolania/Radiolobe.git
