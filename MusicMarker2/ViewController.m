@@ -11,6 +11,7 @@
 #import "MusicTableViewController.h"
 #import <DropboxSDK/DropboxSDK.h>
 #import "PlayerBuildViewController.h"
+#import "AppDelegate.h"
 
 
 @interface ViewController () <DBRestClientDelegate>
@@ -23,6 +24,10 @@
 
 @property (nonatomic, strong) NSArray *sortDescriptors;
 @property (nonatomic, assign) BOOL isAddingList;
+
+//Codigo nuevo para llevar lo de la tabla
+@property (strong, nonatomic) NSMutableArray *song;
+@property (strong, nonatomic) NSMutableArray *veredict;
 
 @end
 
@@ -42,6 +47,7 @@ long numCol;
     self.restClient.delegate = self;
     
     mtvc = [self.storyboard instantiateViewControllerWithIdentifier:@"musictable"];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -88,9 +94,8 @@ long numCol;
 - (IBAction)player:(id)sender {
     
     mtvc.sendStyle = [NSNumber numberWithBool:YES];
-    
-    
     [self.navigationController pushViewController:mtvc animated:YES];
+
 }
 
 
@@ -242,9 +247,10 @@ loadMetadataFailedWithError:(NSError *)error {
 }
 
 // Catpure the picker view selection
+
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-        
+    
     NSLog(@"Lo que lee el row:%ld", (long)row);
     
     NSInteger i = (int) (long) row;
@@ -254,4 +260,5 @@ loadMetadataFailedWithError:(NSError *)error {
     mtvc.style = [_pickerData objectAtIndex:i];
     
 }
+
 @end

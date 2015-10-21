@@ -9,10 +9,16 @@
 #import "MusicTableViewController.h"
 #import "ViewController.h"
 #import <DropboxSDK/DropboxSDK.h>
+#import "AppDelegate.h"
+#import "Curation.h"
 
 @interface MusicTableViewController () <DBRestClientDelegate>
 
 @property (nonatomic, strong) DBRestClient *restClient;
+
+
+@property (strong, nonatomic) NSMutableArray *song;
+@property (strong, nonatomic) NSMutableArray *veredict;
 
 @end
 
@@ -61,6 +67,12 @@ NSInteger actualSong;
     
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [tableV reloadData];
+    
+    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -88,17 +100,51 @@ NSInteger actualSong;
     
     cell.textLabel.text = [downloadedSongs objectAtIndex:(indexPath.row)];
     
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
     
-    if(indexPath.row==count)
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity =
+    [NSEntityDescription entityForName:@"Curation"
+                inManagedObjectContext:context];
+    [request setEntity:entity];
+    
+    NSPredicate *predicate =
+    [NSPredicate predicateWithFormat:@"song == %@", [downloadedSongs objectAtIndex:(indexPath.row)]];
+    [request setPredicate:predicate];
+    
+    NSError *error;
+    NSArray *array = [context executeFetchRequest:request error:&error];
+    
+    
+    if(array.count >0)
+    {
+        Curation *curation = array[0];
+        NSString *valueSong = curation.veredict;
+        
+        if ([valueSong  isEqualToString: @"positive"]) {
+            
+            cell.backgroundColor = [UIColor greenColor];
+            
+        } else if ([valueSong  isEqualToString: @"negative"]) {
+            
+            cell.backgroundColor = [UIColor redColor];
+            
+        } else if ([valueSong  isEqualToString: @"hit"]) {
+            
+            cell.backgroundColor = [UIColor yellowColor];
+            
+        }
+    } else {
+        
         cell.backgroundColor = [UIColor whiteColor];
-    else
-        cell.backgroundColor = [UIColor whiteColor];
+    }
     
     if(count<0){
         if(indexPath.row==0)
             cell.backgroundColor = [UIColor grayColor];
     }
-    
+
     return cell;
 }
 
@@ -110,7 +156,7 @@ NSInteger actualSong;
         actualSong = indexPath.row;
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         NSString *musictoplayname = cell.textLabel.text;
-        cell.backgroundColor = [UIColor yellowColor];
+        //cell.backgroundColor = [UIColor yellowColor];
         
         pbvc.musicToPlay = musictoplayname;
         pbvc.changedSong = [NSNumber numberWithBool:YES];
@@ -188,15 +234,6 @@ loadMetadataFailedWithError:(NSError *)error {
     [[DBSession sharedSession] unlinkAll];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma mark - NSNotification Method
 
@@ -221,36 +258,14 @@ loadMetadataFailedWithError:(NSError *)error {
     if (isNew) {
         [selectionDictionary addObject:[[notification userInfo] mutableCopy]];
     }
-    
-    /*
-    NSString *rating = [[notification userInfo] objectForKey:@"rating"];
-    NSString *selectedSong = [[notification userInfo] objectForKey:@"selectedSong"];
-    
-    if ( [rating  isEqualToString: @"positive"] ){
-        
-        [positiveSelection addObject:selectedSong];
-        
-    } else if ( [rating isEqualToString: @"negative"] ){
-        
-        NSLog(@"Está entrando: %@", selectedSong );
-        [negativeSelection addObject:selectedSong];
-        
-    } else if ( [rating isEqualToString:@"hit"]){
-        
-        [hitSelection addObject:selectedSong];
-    
-    } else {
-        
-    }
-     */
-    
-    //if ([[notification name] isEqualToString:@"TestNotification"])
 }
 
 - (IBAction)saveFile:(id)sender {
     
-    [self writeToFileWithName:@"SelectedSongs"];
+    [self writeToFileWithName:@"selectedSongs"];
+    NSLog(@"Paso por el saveFile:");
 }
+
 
 -(void)writeToFileWithName:(NSString *)fileName {
     
@@ -258,7 +273,9 @@ loadMetadataFailedWithError:(NSError *)error {
     [dateFormat setDateFormat:@"MMddyyyyhhmma"];
     NSString *dateString = [dateFormat stringFromDate:[NSDate date]];
     
-    fileName = [NSString stringWithFormat:@"%@%@%@",self.nombreUser,fileName,dateString];
+    fileName = [NSString stringWithFormat:@"%@%@%@",self.nombreUser, fileName, dateString];
+    
+    //NSLog(@"El nombre del archivo para guardar es %@", fileName);
     
     NSString *docDirPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     
@@ -266,14 +283,20 @@ loadMetadataFailedWithError:(NSError *)error {
     [@"Music Marker \n" writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
     NSFileHandle *fh = [NSFileHandle fileHandleForWritingAtPath:filePath];
     
+    //NSLog(@"El nombre de la canión para guardar es %@", filePath);
     
     NSMutableArray *finalArray =[[NSMutableArray alloc] init];
     
+    //NSLog(@"Los elementos son:%@", finalArray[0]);
+
     [finalArray addObject:@"\n---- Good Songs ----\n"];
     
     for (NSMutableDictionary * mDictionary in selectionDictionary) {
         if ([mDictionary[@"rating"] isEqualToString:@"positive"]) {
             [finalArray addObject:mDictionary[@"selectedSong"]];
+            
+            NSLog(@"1%@", fileName);
+            
         }
     }
 
@@ -283,6 +306,8 @@ loadMetadataFailedWithError:(NSError *)error {
         if ([mDictionary[@"rating"] isEqualToString:@"negative"]) {
             [finalArray addObject:mDictionary[@"selectedSong"]];
 
+        }
+        
     }
 
     [finalArray addObject:@"\n---- Hit Songs ----\n"];
@@ -290,11 +315,13 @@ loadMetadataFailedWithError:(NSError *)error {
     for (NSMutableDictionary * mDictionary in selectionDictionary) {
         if ([mDictionary[@"rating"] isEqualToString:@"hit"]) {
             [finalArray addObject:mDictionary[@"selectedSong"]];
+            NSLog(@"1%@", fileName);
         }
     }
     
     for (NSString *line in finalArray) {
         
+        NSLog(@"EL COMPADRE!!!:%@",line);
         [fh seekToEndOfFile];
         [fh writeData:[line dataUsingEncoding:NSUTF8StringEncoding]];
         [fh writeData:[@"\n" dataUsingEncoding:NSUTF8StringEncoding]];
@@ -305,11 +332,8 @@ loadMetadataFailedWithError:(NSError *)error {
     
     NSString *destDir = [NSString stringWithFormat:@"/%@/",self.style];
     
-    
-    NSLog(@"fileName:%@, FILEPath:%@",[NSString stringWithFormat:@"%@.txt", fileName], filePath);
     [self.restClient uploadFile:[NSString stringWithFormat:@"/%@.txt", fileName] toPath:destDir withParentRev:nil fromPath:filePath];
 
-    }
 }
 
 - (void)restClient:(DBRestClient *)client uploadedFile:(NSString *)destPath

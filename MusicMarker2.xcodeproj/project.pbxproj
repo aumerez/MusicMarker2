@@ -15,7 +15,9 @@
 		BC64DAE71B504CF50039C010 /* badbtn2mark.png in Resources */ = {isa = PBXBuildFile; fileRef = BC64DAE41B504CF50039C010 /* badbtn2mark.png */; };
 		BC64DAE81B504CF50039C010 /* goodbtn2mark.png in Resources */ = {isa = PBXBuildFile; fileRef = BC64DAE51B504CF50039C010 /* goodbtn2mark.png */; };
 		BC64DAE91B504CF50039C010 /* hit2mark.png in Resources */ = {isa = PBXBuildFile; fileRef = BC64DAE61B504CF50039C010 /* hit2mark.png */; };
+		BC87F0481B94DF3100856DC8 /* readme.markdown in Sources */ = {isa = PBXBuildFile; fileRef = BC87F0471B94DF3100856DC8 /* readme.markdown */; };
 		BC970D9A1B2F806F002E9FB3 /* LoginUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC970D991B2F806F002E9FB3 /* LoginUserViewController.m */; };
+		BC994F011B728F8300BB05E1 /* PlayerBuildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC994F001B728F8300BB05E1 /* PlayerBuildViewController.m */; };
 		BC9EE97C1B4A174300900501 /* badbtn.png in Resources */ = {isa = PBXBuildFile; fileRef = BC9EE97A1B4A174300900501 /* badbtn.png */; };
 		BC9EE97D1B4A174300900501 /* goodbtn.png in Resources */ = {isa = PBXBuildFile; fileRef = BC9EE97B1B4A174300900501 /* goodbtn.png */; };
 		BC9EE9821B4A180300900501 /* hit2.png in Resources */ = {isa = PBXBuildFile; fileRef = BC9EE97E1B4A180300900501 /* hit2.png */; };
@@ -24,7 +26,6 @@
 		BC9EE9851B4A180300900501 /* stopbutton2.png in Resources */ = {isa = PBXBuildFile; fileRef = BC9EE9811B4A180300900501 /* stopbutton2.png */; };
 		BCA150281B14971C00CD562F /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA150271B14971C00CD562F /* PlayerViewController.m */; };
 		BCA1502A1B149EE000CD562F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA150291B149EE000CD562F /* AVFoundation.framework */; };
-		BCA1502D1B15E23D00CD562F /* PlayerBuildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA1502C1B15E23D00CD562F /* PlayerBuildViewController.m */; };
 		BCA1502F1B16581900CD562F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA1502E1B16581900CD562F /* Foundation.framework */; };
 		BCA150311B1665EB00CD562F /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA150301B1665EB00CD562F /* CoreFoundation.framework */; };
 		BCA1507C1B17640900CD562F /* PlayBtnMid.png in Resources */ = {isa = PBXBuildFile; fileRef = BCA1507B1B17640900CD562F /* PlayBtnMid.png */; };
@@ -34,6 +35,7 @@
 		BCAD8AE41B3C872600C31875 /* redlabel-100-bad1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BCAD8AE01B3C872600C31875 /* redlabel-100-bad1.jpg */; };
 		BCAD8AE51B3C872600C31875 /* redlabel-100-good1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BCAD8AE11B3C872600C31875 /* redlabel-100-good1.jpg */; };
 		BCAD8AE61B3C872600C31875 /* redlabel-100-hit1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BCAD8AE21B3C872600C31875 /* redlabel-100-hit1.jpg */; };
+		BCC152301B71543300D76A01 /* Curation.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC1522F1B71543300D76A01 /* Curation.m */; };
 		BCC36B5B1B3AE0840077A87A /* botonamarilloabajo.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC36B551B3AE0840077A87A /* botonamarilloabajo.png */; };
 		BCC36B5E1B3AE0840077A87A /* botonrojoabajo.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC36B581B3AE0840077A87A /* botonrojoabajo.png */; };
 		BCC36B5F1B3AE0840077A87A /* botonverdeabajo.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC36B591B3AE0840077A87A /* botonverdeabajo.png */; };
@@ -83,8 +85,10 @@
 		BC64DAE41B504CF50039C010 /* badbtn2mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = badbtn2mark.png; sourceTree = "<group>"; };
 		BC64DAE51B504CF50039C010 /* goodbtn2mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goodbtn2mark.png; sourceTree = "<group>"; };
 		BC64DAE61B504CF50039C010 /* hit2mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hit2mark.png; sourceTree = "<group>"; };
+		BC87F0471B94DF3100856DC8 /* readme.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.markdown; sourceTree = "<group>"; };
 		BC970D981B2F806F002E9FB3 /* LoginUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginUserViewController.h; sourceTree = "<group>"; };
 		BC970D991B2F806F002E9FB3 /* LoginUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginUserViewController.m; sourceTree = "<group>"; };
+		BC994F001B728F8300BB05E1 /* PlayerBuildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerBuildViewController.m; sourceTree = "<group>"; };
 		BC9EE97A1B4A174300900501 /* badbtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = badbtn.png; path = ../../Imagenes/badbtn.png; sourceTree = "<group>"; };
 		BC9EE97B1B4A174300900501 /* goodbtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goodbtn.png; path = ../../Imagenes/goodbtn.png; sourceTree = "<group>"; };
 		BC9EE97E1B4A180300900501 /* hit2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hit2.png; path = ../../Imagenes/hit2.png; sourceTree = "<group>"; };
@@ -95,7 +99,6 @@
 		BCA150271B14971C00CD562F /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		BCA150291B149EE000CD562F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BCA1502B1B15E23D00CD562F /* PlayerBuildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerBuildViewController.h; sourceTree = "<group>"; };
-		BCA1502C1B15E23D00CD562F /* PlayerBuildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerBuildViewController.m; sourceTree = "<group>"; };
 		BCA1502E1B16581900CD562F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BCA150301B1665EB00CD562F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		BCA1507B1B17640900CD562F /* PlayBtnMid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlayBtnMid.png; sourceTree = "<group>"; };
@@ -105,6 +108,8 @@
 		BCAD8AE01B3C872600C31875 /* redlabel-100-bad1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "redlabel-100-bad1.jpg"; sourceTree = "<group>"; };
 		BCAD8AE11B3C872600C31875 /* redlabel-100-good1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "redlabel-100-good1.jpg"; sourceTree = "<group>"; };
 		BCAD8AE21B3C872600C31875 /* redlabel-100-hit1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "redlabel-100-hit1.jpg"; sourceTree = "<group>"; };
+		BCC1522E1B71543300D76A01 /* Curation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Curation.h; sourceTree = "<group>"; };
+		BCC1522F1B71543300D76A01 /* Curation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Curation.m; sourceTree = "<group>"; };
 		BCC36B551B3AE0840077A87A /* botonamarilloabajo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = botonamarilloabajo.png; sourceTree = "<group>"; };
 		BCC36B581B3AE0840077A87A /* botonrojoabajo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = botonrojoabajo.png; sourceTree = "<group>"; };
 		BCC36B591B3AE0840077A87A /* botonverdeabajo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = botonverdeabajo.png; sourceTree = "<group>"; };
@@ -170,6 +175,7 @@
 		BCFB6E6A1B0EC5C50031538A = {
 			isa = PBXGroup;
 			children = (
+				BC87F0471B94DF3100856DC8 /* readme.markdown */,
 				BC5495301B569DA100F5D209 /* libsqlite3.dylib */,
 				BCA150301B1665EB00CD562F /* CoreFoundation.framework */,
 				BCFB6E751B0EC5C50031538A /* MusicMarker2 */,
@@ -202,7 +208,7 @@
 				BCA150261B14971C00CD562F /* PlayerViewController.h */,
 				BCA150271B14971C00CD562F /* PlayerViewController.m */,
 				BCA1502B1B15E23D00CD562F /* PlayerBuildViewController.h */,
-				BCA1502C1B15E23D00CD562F /* PlayerBuildViewController.m */,
+				BC994F001B728F8300BB05E1 /* PlayerBuildViewController.m */,
 				BCFB6E9F1B0ED8A10031538A /* MusicTableViewController.h */,
 				BCFB6EA01B0ED8A10031538A /* MusicTableViewController.m */,
 				BC970D981B2F806F002E9FB3 /* LoginUserViewController.h */,
@@ -211,6 +217,8 @@
 				BCFB6E861B0EC5C50031538A /* Images.xcassets */,
 				BCFB6E881B0EC5C50031538A /* LaunchScreen.xib */,
 				BCFB6E7D1B0EC5C50031538A /* MusicMarker2.xcdatamodeld */,
+				BCC1522E1B71543300D76A01 /* Curation.h */,
+				BCC1522F1B71543300D76A01 /* Curation.m */,
 				BCFB6E761B0EC5C50031538A /* Supporting Files */,
 			);
 			path = MusicMarker2;
@@ -415,11 +423,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCC152301B71543300D76A01 /* Curation.m in Sources */,
 				BCA150281B14971C00CD562F /* PlayerViewController.m in Sources */,
-				BCA1502D1B15E23D00CD562F /* PlayerBuildViewController.m in Sources */,
+				BC994F011B728F8300BB05E1 /* PlayerBuildViewController.m in Sources */,
 				BCFB6EA11B0ED8A10031538A /* MusicTableViewController.m in Sources */,
 				BC970D9A1B2F806F002E9FB3 /* LoginUserViewController.m in Sources */,
 				BCFB6E7F1B0EC5C50031538A /* MusicMarker2.xcdatamodeld in Sources */,
+				BC87F0481B94DF3100856DC8 /* readme.markdown in Sources */,
 				BCFB6E7C1B0EC5C50031538A /* AppDelegate.m in Sources */,
 				BCFB6E821B0EC5C50031538A /* ViewController.m in Sources */,
 				BCFB6E791B0EC5C50031538A /* main.m in Sources */,

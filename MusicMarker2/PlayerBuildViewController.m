@@ -9,9 +9,14 @@
 #import "PlayerBuildViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <UIKit/UIView.h>
+#import "AppDelegate.h"
+#import "Curation.h"
 
 
 @interface PlayerBuildViewController ()
+
+@property (strong, nonatomic) NSMutableArray *song;
+@property (strong, nonatomic) NSMutableArray *veredict;
 
 @end
 
@@ -21,18 +26,89 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSString *docDirPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSLog(@"docDirPath 790:%@",docDirPath);
+    
     self.sliderTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateSlider) userInfo:nil repeats:YES];
     
     [self.progressSlider addTarget:self action:@selector(progressSliderChanged:) forControlEvents:UIControlEventValueChanged];
     
-    
-    
-}
+    }
 
 - (void)viewDidAppear:(BOOL)animated {
     
     if ([self.changedSong isEqualToNumber:[NSNumber numberWithBool:YES]]) {
         [self playThisSong];
+        
+        AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+        NSManagedObjectContext *context = [appDelegate managedObjectContext];
+        
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity =
+        [NSEntityDescription entityForName:@"Curation"
+                    inManagedObjectContext:context];
+        [request setEntity:entity];
+        
+        NSPredicate *predicate =
+        [NSPredicate predicateWithFormat:@"song == %@", musicToPlay];
+        [request setPredicate:predicate];
+        
+        NSError *error;
+        NSArray *array = [context executeFetchRequest:request error:&error];
+        
+        
+        if (array.count > 0)
+        {
+            Curation *curation = array[0];
+            NSString *valueSong = curation.veredict;
+            
+            if ([valueSong  isEqualToString: @"positive"]) {
+                
+                UIImage * buttonImage=[UIImage imageNamed:@"goodbtn2mark.png"];
+                [positiveMarker setImage:buttonImage forState:UIControlStateNormal];
+                
+                UIImage * buttonImage2=[UIImage imageNamed:@"badbtn.png"];
+                [negativeMarker setImage:buttonImage2 forState:UIControlStateNormal];
+                
+                UIImage * buttonImage3=[UIImage imageNamed:@"hit2.png"];
+                [hitMarker setImage:buttonImage3 forState:UIControlStateNormal];
+                
+            } else if ([valueSong  isEqualToString: @"negative"]) {
+                
+                UIImage * buttonImage=[UIImage imageNamed:@"goodbtn.png"];
+                [positiveMarker setImage:buttonImage forState:UIControlStateNormal];
+                
+                UIImage * buttonImage2=[UIImage imageNamed:@"badbtn2mark.png"];
+                [negativeMarker setImage:buttonImage2 forState:UIControlStateNormal];
+                
+                UIImage * buttonImage3=[UIImage imageNamed:@"hit2.png"];
+                [hitMarker setImage:buttonImage3 forState:UIControlStateNormal];
+                
+            } else if ([valueSong  isEqualToString: @"hit"]) {
+                
+                UIImage * buttonImage=[UIImage imageNamed:@"goodbtn.png"];
+                [positiveMarker setImage:buttonImage forState:UIControlStateNormal];
+                
+                UIImage * buttonImage2=[UIImage imageNamed:@"badbtn.png"];
+                [negativeMarker setImage:buttonImage2 forState:UIControlStateNormal];
+                
+                UIImage * buttonImage3=[UIImage imageNamed:@"hit2mark.png"];
+                [hitMarker setImage:buttonImage3 forState:UIControlStateNormal];
+                
+            }
+        } else {
+            
+            UIImage * buttonImage=[UIImage imageNamed:@"goodbtn.png"];
+            [positiveMarker setImage:buttonImage forState:UIControlStateNormal];
+            
+            UIImage * buttonImage2=[UIImage imageNamed:@"badbtn.png"];
+            [negativeMarker setImage:buttonImage2 forState:UIControlStateNormal];
+            
+            UIImage * buttonImage3=[UIImage imageNamed:@"hit2.png"];
+            [hitMarker setImage:buttonImage3 forState:UIControlStateNormal];
+            
+        }
+
     }
 }
 
@@ -61,7 +137,7 @@
         UIImage * buttonImage=[UIImage imageNamed:@"Pausebut2.png"];
         [playPauseButton setImage:buttonImage forState:UIControlStateNormal];
         
-    } else if (self.audioPlayer.playing){
+    } else {
         [self.audioPlayer pause];
         [self.playPauseButton setTitle:@"" forState:UIControlStateNormal];
         UIImage * buttonImage=[UIImage imageNamed:@"playbut2.png"];
@@ -79,7 +155,8 @@
     NSString *filePath = [NSString stringWithFormat:@"%@/%@", docDirPath, musicToPlay];
     NSURL *url = [NSURL fileURLWithPath:filePath];
     
-    NSLog(@"filePath:%@",filePath);
+    UIImage * buttonImage=[UIImage imageNamed:@"Pausebut2.png"];
+    [playPauseButton setImage:buttonImage forState:UIControlStateNormal];
 
     url = [NSURL fileURLWithPath:filePath];
     
@@ -104,15 +181,6 @@
         [self.audioPlayer prepareToPlay];
         
         self.progressSlider.maximumValue = self.audioPlayer.duration;
-        
-        UIImage * buttonImage=[UIImage imageNamed:@"goodbtn.png"];
-        [positiveMarker setImage:buttonImage forState:UIControlStateNormal];
-        
-        UIImage * buttonImage2=[UIImage imageNamed:@"badbtn.png"];
-        [negativeMarker setImage:buttonImage2 forState:UIControlStateNormal];
-        
-        UIImage * buttonImage3=[UIImage imageNamed:@"hit2.png"];
-        [hitMarker setImage:buttonImage3 forState:UIControlStateNormal];
         
         [self.audioPlayer play];
     }
@@ -201,16 +269,56 @@
         [self.audioPlayer play];
     }
 }
+
+//Codigo nuevo para llevar lo de la tabla
+- (void)addToTableSong:(NSString *)song withValue:(NSString *)value{
+    
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity =
+    [NSEntityDescription entityForName:@"Curation"
+                inManagedObjectContext:context];
+    [request setEntity:entity];
+    
+    NSPredicate *predicate =
+    [NSPredicate predicateWithFormat:@"song == %@", song];
+    [request setPredicate:predicate];
+    
+    NSError *error;
+    NSArray *array = [context executeFetchRequest:request error:&error];
+    
+    if (array.count > 0)
+    {
+        Curation *curation = array[0];
+        curation.veredict = value;
+        [context save:&error];
+    }
+    else {
+        
+        NSManagedObject *newSong = [NSEntityDescription insertNewObjectForEntityForName:@"Curation" inManagedObjectContext:context];
+        [newSong setValue:song forKey:@"song"];
+        [newSong setValue:value forKey:@"veredict"];
+        [context save:&error];
+    }
+    
+}
 - (IBAction)positiveMarker:(id)sender {
     
     //[selecctions addObject:musicToPlay];
-
+    
+    //This is the Dictionary manager
+    
+    NSLog(@"1:%@",musicToPlay);
     
     NSDictionary *dictionary = [[NSDictionary alloc] initWithObjects:@[musicToPlay,@"positive"] forKeys:@[@"selectedSong",@"rating"]];
     
     [[NSNotificationCenter defaultCenter]
      postNotificationName:@"ratingNotification"
      object:self userInfo:dictionary];
+    
+    [self addToTableSong:musicToPlay withValue:@"positive"];
     
     UIImage * buttonImage=[UIImage imageNamed:@"goodbtn2mark.png"];
     [positiveMarker setImage:buttonImage forState:UIControlStateNormal];
@@ -224,12 +332,14 @@
 }
 
 - (IBAction)negativeMarker:(id)sender {
-    
+    //This is the Dictionary manager
     NSDictionary *dictionary = [[NSDictionary alloc] initWithObjects:@[musicToPlay,@"negative"] forKeys:@[@"selectedSong",@"rating"]];
     
     [[NSNotificationCenter defaultCenter]
      postNotificationName:@"ratingNotification"
      object:self userInfo:dictionary];
+    
+    [self addToTableSong:musicToPlay withValue:@"negative"];
     
     UIImage * buttonImage=[UIImage imageNamed:@"goodbtn.png"];
     [positiveMarker setImage:buttonImage forState:UIControlStateNormal];
@@ -243,12 +353,14 @@
 }
 
 - (IBAction)hitMarker:(id)sender {
-    
+    //This is the Dictionary manager
     NSDictionary *dictionary = [[NSDictionary alloc] initWithObjects:@[musicToPlay,@"hit"] forKeys:@[@"selectedSong",@"rating"]];
     
     [[NSNotificationCenter defaultCenter]
      postNotificationName:@"ratingNotification"
      object:self userInfo:dictionary];
+    
+    [self addToTableSong:musicToPlay withValue:@"hit"];
     
     UIImage * buttonImage=[UIImage imageNamed:@"goodbtn.png"];
     [positiveMarker setImage:buttonImage forState:UIControlStateNormal];

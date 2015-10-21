@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MusicTableViewController.h"
 
-@interface ViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate> {
+@interface ViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate,UITableViewDelegate, UITableViewDataSource> {
 MusicTableViewController *mtvc;
 }
 
